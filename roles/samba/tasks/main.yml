@@ -1,0 +1,4 @@
+---
+- include: roles/samba/tasks/packages.yaml
+- include: roles/samba/tasks/config.yaml
+- include: roles/samba/tasks/service.yaml

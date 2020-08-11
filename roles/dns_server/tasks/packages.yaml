@@ -1,0 +1,10 @@
+---
+- hosts: dns
+  become: true
+  tasks: 
+    - name: Install bind and bind-utils
+      package:
+        name:
+          - bind
+          - bind-utils
+        state: latest

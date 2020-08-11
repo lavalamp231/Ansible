@@ -1,0 +1,5 @@
+- name: start and ensure smb service
+  service:
+    name: smb
+    state: started
+    enabled: yes

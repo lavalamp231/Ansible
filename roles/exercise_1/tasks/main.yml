@@ -1,0 +1,19 @@
+---
+- name: Ensure group "Andrews_group" exists
+  group:
+    name: Andrews_group
+    state: present
+
+- name: Add the users appending the group 'Andrews Group'
+  with_dict: "{{ users_groups }}"
+  user:
+    name: "{{ item.key }}"
+    shell: /bin/bash
+    uid: "{{ item.value.uid }}"
+    group: "{{ item.value.group }}"
+    append: yes
+
+- name: test2
+  debug:
+    msg: "User {{ item.key }} is {{ item.value.uid }} ({{ item.value.group }})"
+  with_dict: "{{ users_groups }}"

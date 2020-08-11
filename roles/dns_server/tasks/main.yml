@@ -1,0 +1,5 @@
+---
+# tasks file for dns_server
+- include: roles/dns_server/tasks/packages.yaml
+- include: roles/dns_server/tasks/config.yaml
+- include: roles/dns_server/tasks/service.yaml
