@@ -1,0 +1,10 @@
+---
+- name: Upgrade all packages
+  yum:
+    name: '*'
+    state: latest
+
+- name: Ensure system is updated
+  package:
+    name: "{{ packages }}"
+    state: present
