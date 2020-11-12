@@ -36,7 +36,7 @@
     state: started
     enabled: yes
 
-- name: start service nfs-server, if not running
+- name: start service smb, if not running
   service:
     name: smb
     state: started
@@ -45,4 +45,4 @@
 - name: copy samba config file
   copy: src=files/smb.conf dest=/etc/samba/smb.conf
   notify: 
-    - restart samba
+    - start service smb, if not running
