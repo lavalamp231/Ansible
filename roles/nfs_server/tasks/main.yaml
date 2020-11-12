@@ -9,12 +9,13 @@
     name: sambagroup
     state: present
 
-- name: Add the user 'Andrew' with a specific uid and a primary group of 'admin'
+- name: Add the user 'Andrew' with a specific uid and a primary group of 'sambagroup'
   user:
     name: Andrew
     uid: 1000
     shell: /bin/bash
     groups: sambagroup
+    password: {{ Andrew_pass }}
 
 - name: ansible create directory example
   file:
