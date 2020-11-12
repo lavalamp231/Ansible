@@ -13,8 +13,8 @@
   user:
     name: Andrew
     uid: 1000
-    group: sambagroup
-
+    shell: /bin/bash
+    groups: sambagroup
 
 - name: ansible create directory example
   file:
@@ -45,4 +45,4 @@
 - name: copy samba config file
   copy: src=files/smb.conf dest=/etc/samba/smb.conf
   notify: 
-    - start service smb, if not running
+    - restart samba
