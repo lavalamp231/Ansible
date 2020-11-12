@@ -8,3 +8,6 @@
   package:
     name: "{{ packages }}"
     state: present
+
+- selinux:
+    state: disabled
