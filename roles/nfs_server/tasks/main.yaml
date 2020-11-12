@@ -15,7 +15,7 @@
     uid: 1000
     shell: /bin/bash
     groups: sambagroup
-    password: {{ Andrew_pass }}
+    password: "{{ Andrew_pass }}"
 
 - name: ansible create directory example
   file:
