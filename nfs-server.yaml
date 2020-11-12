@@ -1,5 +1,6 @@
 ---
 - hosts: NFS-Server
+  vars_files: vault.yaml
   roles:
     - base
     - nfs_server
