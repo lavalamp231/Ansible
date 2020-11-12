@@ -1,5 +1,6 @@
 ---
 # vars
 packages:
+  - epel-release
   - nfs-server
   - samba
