@@ -38,7 +38,7 @@
 
 - name: start service nfs-server, if not running
   service:
-    name: smbd
+    name: smb
     state: started
     enabled: yes
 
