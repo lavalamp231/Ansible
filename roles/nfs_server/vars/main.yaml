@@ -1,0 +1,5 @@
+---
+# vars
+packages:
+  - nfs-server
+  - samba

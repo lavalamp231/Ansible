@@ -1,0 +1,48 @@
+---
+- name: Ensure nfs-server and samba is installed
+  package:
+    name: "{{ packages }}"
+    state: present
+
+- name: Ensure group "sambagroup" exists
+  group:
+    name: sambagroup
+    state: present
+
+- name: Add the user 'Andrew' with a specific uid and a primary group of 'admin'
+  user:
+    name: Andrew
+    uid: 1000
+    group: sambagroup
+
+
+- name: ansible create directory example
+  file:
+    path: /Plex
+    state: directory
+    owner: Andrew
+    group: sambagroup
+    mode: 0775
+
+- name: Stop service firewalld, if not running
+  service:
+    name: httpd
+    state: stopped
+    enabled: no
+
+- name: start service nfs-server, if not running
+  service:
+    name: nfs-server
+    state: started
+    enabled: yes
+
+- name: start service nfs-server, if not running
+  service:
+    name: samba
+    state: started
+    enabled: yes
+
+- name: copy samba config file
+  copy: src=files/smb.conf dest=/etc/samba/smb.conf
+  notify: 
+    - restart samba
