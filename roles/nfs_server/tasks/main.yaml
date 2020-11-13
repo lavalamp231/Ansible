@@ -15,7 +15,7 @@
     uid: 1000
     shell: /bin/bash
     groups: sambagroup
-    password: "{{ Andrew_pass }}"
+    password: "{{ password }}"
 
 - name: ansible create directory example
   file:
@@ -45,5 +45,5 @@
 
 - name: copy samba config file
   copy: src=files/smb.conf dest=/etc/samba/smb.conf
-  notify: 
+  notify:
     - restart samba
