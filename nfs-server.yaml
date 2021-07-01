@@ -1,8 +1,0 @@
----
-- hosts: NFS-Server
-  pre_tasks:
-    - name: include var file
-      include_vars: vault.yaml
-  roles:
-    - base
-    - nfs_server

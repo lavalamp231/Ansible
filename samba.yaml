@@ -1,5 +1,0 @@
----
-- hosts: TEST
-  roles:
-    - samba
-    - { role: exercise_1, user1: bob}
