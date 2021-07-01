@@ -1,7 +1,0 @@
----
-PACKAGES:
-  - htop
-  - vim
-  - nmap
-  - wget
-  - epel-release
