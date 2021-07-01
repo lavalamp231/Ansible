@@ -1,11 +1,11 @@
 - name: Install packages
   package:
-    name: "{{ PACKAGES }}"
+    name: "{{ packages }}"
     state: present
 - name: Copy public ssh key
   copy:
     dest: "/root/.ssh/authorized_keys"
-    content: "{{ SSH_PUBLIC_KEY }}"
+    content: "{{ ssh_public_key }}"
 - name: ensure client NTP config is setup
   copy: src=files/ntp.conf dest=/etc/ntp/ntp.conf
   notify: 
