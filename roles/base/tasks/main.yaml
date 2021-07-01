@@ -1,16 +1,13 @@
----
-  - hosts: ALL
-    tasks:
-      - name: Install packages
-        package:
-          name: "{{ PACKAGES }}"
-          state: present
-      - name: Copy public ssh key
-        copy:
-          dest: "/root/.ssh/authorized_keys"
-          content: "{{ SSH_PUBLIC_KEY }}"
-      - name: ensure client NTP config is setup
-        copy: src=files/ntp.conf dest=/etc/ntp/ntp.conf
-        notify: 
-          - restart ntp
-        when: ansible_facts['hostname'] != "dns1.esxi.com"
+- name: Install packages
+  package:
+    name: "{{ PACKAGES }}"
+    state: present
+- name: Copy public ssh key
+  copy:
+    dest: "/root/.ssh/authorized_keys"
+    content: "{{ SSH_PUBLIC_KEY }}"
+- name: ensure client NTP config is setup
+  copy: src=files/ntp.conf dest=/etc/ntp/ntp.conf
+  notify: 
+    - restart ntp
+  when: ansible_facts['hostname'] != "dns1.esxi.com"
