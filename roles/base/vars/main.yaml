@@ -1,7 +1,11 @@
 ---
 # vars
 packages:
+  - epel-release
   - vim
   - bash-completion
   - wget
   - nfs-utils
+  - git
+
+ssh_public_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCnhy/Ndnww4D9w3KAXxvVYTRHsWDAGsvlny2b/a7Rh2wXoe3clzRt4lu5KO5/sBckhdEex/0bhcCEJzRWG+7myMK+xkNqGIYGhQFuLQEDeXCb9PUF1uSo/bpFx+BB5mQ46/H0FFRwJYSOYRYHDq6w0/3V1lM21x7x8eMyUpLvHDnok5nb9wgbRa/NEygSAs5f+EJaAn8Z3kGGI312ipjW2xMvZA6PYAAXni0A3gE76RcnGB3c7EySocVIbJfSIM0mcz3fdOp6/irl95dB+tHZXkqVNeKFItHiBoOMhihVsitNhiWkFlTRUOBQuPt4yckp/uoPwmsxv7cELZUIza0Oj root@ansible

@@ -1,4 +1,0 @@
-- name: copy samba config file
-  copy: src=files/smb.conf dest=/etc/samba/smb.conf
-  notify: 
-    - restart samba

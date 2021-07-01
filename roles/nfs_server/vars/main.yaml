@@ -1,5 +1,0 @@
----
-# vars
-packages:
-  - epel-release
-  - samba

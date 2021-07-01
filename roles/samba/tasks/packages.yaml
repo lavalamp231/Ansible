@@ -1,5 +1,0 @@
----
-- name: "install packages on {{ ansible_default_ipv4.address }}"
-  package:
-    name: samba
-    state: present
