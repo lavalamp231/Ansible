@@ -1,0 +1,4 @@
+---
+- hosts: ALL
+  roles:
+  	- base
